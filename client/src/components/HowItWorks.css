@@ -1,0 +1,8 @@
+/* Redundant - Styles moved to HowItWorks.jsx and index.css */
+:root {
+  --bg-color: var(--color-bg);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --border-color: var(--color-border);
+  --surface-raised: var(--color-surface-raised);
+}

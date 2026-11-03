@@ -1,0 +1,500 @@
+/* Solutions Page CTA Banner Styling */
+
+.solutions-cta-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 50%, #eef3fb 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 8rem 0;
+}
+
+/* Subtle Grid Pattern Overlay */
+.solutions-cta-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animating Mesh Gradient Blobs */
+.solutions-cta-mesh-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.solutions-mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+
+.solutions-mesh-blob-orange {
+  background: radial-gradient(circle, #ff6b00 0%, rgba(255, 107, 0, 0.4) 60%, transparent 100%);
+  width: 500px;
+  height: 500px;
+  top: -10%;
+  right: 5%;
+  animation: mesh-float-orange 25s infinite alternate ease-in-out;
+}
+
+.solutions-mesh-blob-blue {
+  background: radial-gradient(circle, #3b82f6 0%, rgba(59, 130, 246, 0.3) 60%, transparent 100%);
+  width: 600px;
+  height: 600px;
+  bottom: -15%;
+  left: 5%;
+  animation: mesh-float-blue 30s infinite alternate ease-in-out;
+}
+
+.solutions-mesh-blob-accent {
+  background: radial-gradient(circle, #a855f7 0%, rgba(168, 85, 247, 0.2) 60%, transparent 100%);
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  right: 40%;
+  animation: mesh-float-accent 22s infinite alternate ease-in-out;
+}
+
+/* Abstract Curved Lines styling */
+.solutions-curved-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+}
+
+/* Glassmorphism Card Container */
+.solutions-glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 32px;
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.03),
+    0 30px 60px -15px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  padding: 4rem;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solutions-glass-card:hover {
+  border-color: rgba(255, 107, 0, 0.25);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.03),
+    0 40px 70px -10px rgba(255, 107, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Badge styling */
+.solutions-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 107, 0, 0.08);
+  color: #ff6b00;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.03);
+}
+
+.solutions-badge svg {
+  color: #ff6b00;
+}
+
+/* Headline and Description styles for light mode */
+.solutions-headline {
+  color: #0c0e17 !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.solutions-headline span {
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.solutions-description {
+  color: #4b5563 !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+/* Buttons style */
+.btn-solutions-primary {
+  background: #ff6b00 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid #ff6b00 !important;
+}
+
+.btn-solutions-primary:hover {
+  background: #e05e00 !important;
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.btn-solutions-secondary {
+  background: rgba(255, 255, 255, 0.5) !important;
+  color: #1f2937 !important;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-solutions-secondary:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 107, 0, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* =========================================================================
+   RIGHT SIDE - PREMIUM ANIMATED PRODUCT VISUALIZATION
+========================================================================= */
+
+.solutions-visual-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Holographic Rotating Rings */
+.hologram-ring-outer {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1.5px dashed rgba(59, 130, 246, 0.25);
+  border-radius: 50%;
+  animation: rotate-clockwise 45s infinite linear;
+}
+
+.hologram-ring-middle {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(255, 107, 0, 0.15);
+  border-radius: 50%;
+  animation: rotate-counter-clockwise 30s infinite linear;
+}
+
+.hologram-ring-inner {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px dotted rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: rotate-clockwise 20s infinite linear;
+}
+
+/* Center Holographic Shield Sphere */
+.hologram-center {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, rgba(255, 107, 0, 0.02) 70%);
+  border: 1.5px solid rgba(255, 107, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px rgba(255, 107, 0, 0.2);
+  z-index: 5;
+  animation: pulse-glow 3s infinite alternate ease-in-out;
+}
+
+.hologram-center svg {
+  color: #ff6b00;
+  filter: drop-shadow(0 0 8px rgba(255, 107, 0, 0.6));
+}
+
+/* Floating Dashboard Cards */
+.floating-glass-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  pointer-events: auto;
+}
+
+/* Hover effect on cards */
+.floating-glass-card:hover {
+  border-color: rgba(255, 107, 0, 0.4);
+  transform: scale(1.05) !important;
+  box-shadow: 0 15px 35px rgba(255, 107, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Distinct Positions & Float animations */
+.card-siem {
+  top: 12%;
+  left: 8%;
+  animation: float-y-card1 6s infinite alternate ease-in-out;
+}
+
+.card-ai {
+  top: 15%;
+  right: 6%;
+  animation: float-y-card2 7s infinite alternate ease-in-out;
+}
+
+.card-endpoint {
+  bottom: 12%;
+  left: 5%;
+  animation: float-y-card3 8s infinite alternate ease-in-out;
+}
+
+.card-cloud {
+  bottom: 15%;
+  right: 8%;
+  animation: float-y-card4 6.5s infinite alternate ease-in-out;
+}
+
+.card-threats {
+  top: 48%;
+  right: -5%;
+  background: rgba(255, 255, 255, 0.8);
+  border-left: 3px solid #ff6b00;
+  animation: float-y-card5 7.5s infinite alternate ease-in-out;
+  padding: 0.75rem 1.15rem;
+}
+
+/* Floating Particles */
+.floating-orange-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff6b00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff6b00;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.part-1 {
+  top: 30%;
+  left: 20%;
+  animation: float-y-particle 4s infinite alternate ease-in-out;
+}
+
+.part-2 {
+  top: 70%;
+  right: 25%;
+  animation: float-y-particle 5s infinite alternate ease-in-out 1s;
+}
+
+.part-3 {
+  bottom: 25%;
+  left: 45%;
+  animation: float-y-particle 6s infinite alternate ease-in-out 0.5s;
+}
+
+/* SVG Connection Lines overlay */
+.solutions-svg-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.network-path {
+  fill: none;
+  stroke: rgba(59, 130, 246, 0.2);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+}
+
+.network-path-orange {
+  fill: none;
+  stroke: rgba(255, 107, 0, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+  animation: dash-flow 25s infinite linear;
+}
+
+/* Connection line pulse dot keyframe */
+.glowing-node-circle {
+  fill: #3b82f6;
+  filter: drop-shadow(0 0 4px #3b82f6);
+}
+
+.glowing-node-orange {
+  fill: #ff6b00;
+  filter: drop-shadow(0 0 5px #ff6b00);
+}
+
+/* =========================================================================
+   KEYFRAME ANIMATIONS
+========================================================================= */
+
+@keyframes rotate-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counter-clockwise {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(255, 107, 0, 0.4);
+    border-color: rgba(255, 107, 0, 0.7);
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Card Floating Animations */
+@keyframes float-y-card1 {
+  0% { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float-y-card2 {
+  0% { transform: translateY(0px) rotate(1deg); }
+  100% { transform: translateY(-14px) rotate(-1deg); }
+}
+
+@keyframes float-y-card3 {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(-10px) rotate(0deg); }
+}
+
+@keyframes float-y-card4 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+@keyframes float-y-card5 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes float-y-particle {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-15px) translateX(8px); opacity: 0.3; }
+}
+
+/* Background Blob Animations */
+@keyframes mesh-float-orange {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(50px, -40px) scale(1.1); }
+  66% { transform: translate(-30px, 60px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes mesh-float-blue {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(-40px, 50px) scale(0.9); }
+  66% { transform: translate(60px, -30px) scale(1.15); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes mesh-float-accent {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, 40px) scale(1.05); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .solutions-glass-card {
+    padding: 3rem 2rem;
+  }
+  .solutions-visual-container {
+    height: 380px;
+    margin-top: 3rem;
+  }
+  .floating-glass-card {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .card-threats {
+    right: 5%;
+  }
+}
+
+@media (max-width: 640px) {
+  .solutions-cta-wrapper {
+    padding: 4rem 0;
+  }
+  .solutions-glass-card {
+    padding: 2.5rem 1.25rem;
+    border-radius: 24px;
+  }
+  .solutions-headline {
+    font-size: 2.25rem !important;
+  }
+  .solutions-visual-container {
+    height: 320px;
+  }
+  .floating-glass-card {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+  .hologram-ring-outer {
+    width: 260px;
+    height: 260px;
+  }
+  .hologram-ring-middle {
+    width: 200px;
+    height: 200px;
+  }
+  .hologram-ring-inner {
+    width: 140px;
+    height: 140px;
+  }
+}

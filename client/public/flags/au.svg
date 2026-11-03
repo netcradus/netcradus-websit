@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="20" height="20">
+  <clipPath id="au_clip">
+    <rect width="60" height="60" rx="9" ry="9"/>
+  </clipPath>
+  <clipPath id="au_t">
+    <path d="M15,15 L30,0 h-30 z M15,15 L0,30 h30 z"/>
+  </clipPath>
+  <g clip-path="url(#au_clip)">
+    <rect width="60" height="60" fill="#00008B"/>
+    <!-- Canton Union Jack (30x30) -->
+    <g>
+      <rect width="30" height="30" fill="#012169"/>
+      <path d="M0,0 L30,30 M30,0 L0,30" stroke="#FFFFFF" stroke-width="6"/>
+      <path d="M0,0 L30,30 M30,0 L0,30" stroke="#C8102E" stroke-width="2" clip-path="url(#au_t)"/>
+      <path d="M15,0 v30 M0,15 h30" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M15,0 v30 M0,15 h30" stroke="#C8102E" stroke-width="6"/>
+    </g>
+    <!-- Commonwealth Star (Large 7-point star bottom left) -->
+    <path d="M15,37 L16.2,40.8 L20.2,40.8 L17,43.2 L18.2,47 L15,44.6 L11.8,47 L13,43.2 L9.8,40.8 L13.8,40.8 Z" fill="#FFFFFF"/>
+    <!-- Southern Cross Stars -->
+    <!-- Gamma Crucis (top right) -->
+    <path d="M45,8 L45.6,9.8 L47.5,9.8 L46,10.9 L46.6,12.7 L45,11.5 L43.4,12.7 L44,10.9 L42.5,9.8 L44.4,9.8 Z" fill="#FFFFFF"/>
+    <!-- Beta Crucis (middle left) -->
+    <path d="M35,24 L35.6,25.8 L37.5,25.8 L36,26.9 L36.6,28.7 L35,27.5 L33.4,28.7 L34,26.9 L32.5,25.8 L34.4,25.8 Z" fill="#FFFFFF"/>
+    <!-- Delta Crucis (middle right) -->
+    <path d="M53,22 L53.6,23.8 L55.5,23.8 L54,24.9 L54.6,26.7 L53,25.5 L51.4,26.7 L52,24.9 L50.5,23.8 L52.4,23.8 Z" fill="#FFFFFF"/>
+    <!-- Epsilon Crucis (small 5-point star) -->
+    <path d="M47,33 L47.4,34.2 L48.7,34.2 L47.7,35 L48.1,36.2 L47,35.4 L45.9,36.2 L46.3,35 L45.3,34.2 L46.6,34.2 Z" fill="#FFFFFF"/>
+    <!-- Alpha Crucis (bottom right) -->
+    <path d="M45,45 L45.6,46.8 L47.5,46.8 L46,47.9 L46.6,49.7 L45,48.5 L43.4,49.7 L44,47.9 L42.5,46.8 L44.4,46.8 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

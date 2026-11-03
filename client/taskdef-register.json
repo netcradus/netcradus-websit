@@ -1,0 +1,52 @@
+{
+    "family": "default-netcradus-website",
+    "taskRoleArn": null,
+    "executionRoleArn": "arn:aws:iam::113058466902:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "Main",
+            "image": "113058466902.dkr.ecr.ap-south-1.amazonaws.com/netcradus-website:latest",
+            "cpu": 1024,
+            "memoryReservation": 2048,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "name": "main-80-tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/aws/ecs/default/netcradus-website-b6c0",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "2048",
+    "pidMode": null,
+    "ipcMode": null,
+    "proxyConfiguration": null,
+    "inferenceAccelerators": null,
+    "ephemeralStorage": null,
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "enableFaultInjection": false
+}

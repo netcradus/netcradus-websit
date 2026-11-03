@@ -1,0 +1,150 @@
+.footer {
+  background-color: #04060f !important;
+  padding: 5rem 0 2rem;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, #E8400A 0%, #7C3AED 50%, #EC4899 100%) 1;
+  margin-top: 5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-tagline {
+  margin: 1.5rem 0;
+  max-width: 300px;
+  font-size: 0.95rem;
+  color: #94a3b8 !important;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-links a {
+  color: #94a3b8 !important;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--primary-accent);
+}
+
+.footer-col h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #ffffff !important;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #94a3b8 !important;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--primary-accent);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94a3b8 !important;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  text-decoration: none;
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding-top: 1.25rem;
+    font-size: 0.75rem;
+  }
+  .footer-legal {
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+
+/* smooth hover */
+footer a:hover {
+  transform: translateX(3px);
+}
+
+/* smooth tab animation */
+.service-content-pillar {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Ensure logos remain sharp and centered */
+.footer img {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    max-width: 100%;
+}
+
+/* Optional: Subtle glow on hover for the logos */
+.footer img:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+    transform: translateY(-1px);
+}
+/* Add this if it's not already in your separate CSS file */
+.footer img {
+  will-change: transform, filter;
+  /* Ensures logos look crisp on high-res screens */
+  image-rendering: -webkit-optimize-contrast; 
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netcradus Hero - Cybersecurity for the AI Era</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #05060a;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+
+  .stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse 120% 90% at 20% 30%, #14051f 0%, #05060a 55%), #05060a;
+  }
+
+  .glow {
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(circle at 15% 25%, rgba(217, 41, 143, 0.35), transparent 45%),
+      radial-gradient(circle at 85% 70%, rgba(255, 123, 41, 0.28), transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(124, 42, 232, 0.25), transparent 55%);
+    filter: blur(40px);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    50%  { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    100% { transform: translate3d(-3%, 2%, 0) scale(1.03); }
+  }
+
+  svg.streaks {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .streak {
+    stroke-width: 1.4;
+    fill: none;
+    stroke-linecap: round;
+    opacity: 0;
+    filter: drop-shadow(0 0 6px currentColor);
+    animation-name: travel;
+    animation-timing-function: cubic-bezier(.2,.6,.2,1);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes travel {
+    0%   { opacity: 0; stroke-dashoffset: 1400; }
+    8%   { opacity: 0.9; }
+    75%  { opacity: 0.5; }
+    100% { opacity: 0; stroke-dashoffset: 0; }
+  }
+
+  .node {
+    fill: #ffffff;
+    opacity: 0;
+    animation-name: nodePulse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes nodePulse {
+    0%   { opacity: 0; r: 1.5; }
+    15%  { opacity: 1; r: 2.6; }
+    30%  { opacity: 0.3; r: 1.8; }
+    100% { opacity: 0; r: 1.5; }
+  }
+
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* ---- Text content ---- */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    max-width: 1000px;
+  }
+
+  .eyebrow {
+    color: #ff8fd0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.1s;
+  }
+
+  h1 {
+    margin: 0 0 26px 0;
+    font-size: clamp(40px, 6vw, 78px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.35s;
+  }
+
+  h1 span {
+    background: linear-gradient(90deg, #ff8fd0, #ffb37a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  p.sub {
+    margin: 0;
+    max-width: 640px;
+    font-size: clamp(16px, 1.7vw, 20px);
+    line-height: 1.6;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.72);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.65s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="glow"></div>
+
+    <svg class="streaks" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="gradPink" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff2fb0"/>
+          <stop offset="100%" stop-color="#7c2ae8"/>
+        </linearGradient>
+        <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ff7b29"/>
+          <stop offset="100%" stop-color="#ff2f6b"/>
+        </linearGradient>
+      </defs>
+
+      <line class="streak" x1="-100" y1="620" x2="520" y2="120" stroke="url(#gradPink)"
+            stroke-dasharray="900" style="color:#ff2fb0; animation-duration:6s; animation-delay:0s"/>
+      <line class="streak" x1="-60" y1="700" x2="680" y2="60" stroke="url(#gradPink)"
+            stroke-dasharray="1000" style="color:#ff2fb0; animation-duration:7.5s; animation-delay:1.2s"/>
+      <line class="streak" x1="150" y1="740" x2="900" y2="180" stroke="url(#gradOrange)"
+            stroke-dasharray="1000" style="color:#ff7b29; animation-duration:8s; animation-delay:2.4s"/>
+      <line class="streak" x1="400" y1="760" x2="1150" y2="260" stroke="url(#gradOrange)"
+            stroke-dasharray="950" style="color:#ff7b29; animation-duration:6.8s; animation-delay:0.6s"/>
+      <line class="streak" x1="600" y1="780" x2="1300" y2="320" stroke="url(#gradPink)"
+            stroke-dasharray="900" style="color:#ff2fb0; animation-duration:7s; animation-delay:3.2s"/>
+      <line class="streak" x1="50" y1="500" x2="480" y2="80" stroke="url(#gradOrange)"
+            stroke-dasharray="700" style="color:#ff7b29; animation-duration:5.5s; animation-delay:4s"/>
+      <line class="streak" x1="750" y1="700" x2="1250" y2="150" stroke="url(#gradPink)"
+            stroke-dasharray="850" style="color:#7c2ae8; animation-duration:9s; animation-delay:1.8s"/>
+      <line class="streak" x1="-50" y1="350" x2="300" y2="30" stroke="url(#gradPink)"
+            stroke-dasharray="600" style="color:#ff2fb0; animation-duration:6.2s; animation-delay:2.8s"/>
+
+      <circle class="node" cx="520" cy="120" r="2" style="animation-duration:6s; animation-delay:0.3s"/>
+      <circle class="node" cx="680" cy="60" r="2" style="animation-duration:7.5s; animation-delay:1.5s"/>
+      <circle class="node" cx="900" cy="180" r="2" style="animation-duration:8s; animation-delay:2.7s"/>
+      <circle class="node" cx="1150" cy="260" r="2" style="animation-duration:6.8s; animation-delay:0.9s"/>
+      <circle class="node" cx="1300" cy="320" r="2" style="animation-duration:7s; animation-delay:3.5s"/>
+      <circle class="node" cx="480" cy="80" r="2" style="animation-duration:5.5s; animation-delay:4.3s"/>
+      <circle class="node" cx="1250" cy="150" r="2" style="animation-duration:9s; animation-delay:2.1s"/>
+      <circle class="node" cx="300" cy="30" r="2" style="animation-duration:6.2s; animation-delay:3.1s"/>
+    </svg>
+
+    <div class="vignette"></div>
+
+    <div class="content">
+      <div class="eyebrow">Netcradus</div>
+      <h1>Cybersecurity for <span>the AI Era</span></h1>
+      <p class="sub">Protect your business with AI-powered cybersecurity, real-time threat detection, XDR, SIEM, SOAR and 24&times;7 SOC monitoring.</p>
+    </div>
+  </div>
+</body>
+</html>

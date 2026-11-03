@@ -1,0 +1,707 @@
+/* ==========================================================================
+   CYRIX XDR PAGE CSS — NETCRADUS XDR PLATFORM LANDING PAGE
+   ========================================================================== */
+
+:root {
+  --xdr-bg: #03050c;
+  --xdr-dark-panel: #090e1d;
+  --xdr-light-panel: #FFFFFF;
+  --xdr-accent: #3b82f6; /* Blue theme */
+  --xdr-accent-purple: #8b5cf6;
+  --xdr-text-light: #F3F4F6;
+  --xdr-text-dark: #111827;
+  --xdr-muted-light: #9CA3AF;
+  --xdr-muted-dark: #4B5563;
+  --xdr-border-light: rgba(255, 255, 255, 0.06);
+  --xdr-border-dark: rgba(17, 24, 39, 0.08);
+}
+
+.xdr-wrapper {
+  background-color: var(--xdr-bg);
+  color: var(--xdr-text-light);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Typography Overrides */
+.xdr-wrapper h1, 
+.xdr-wrapper h2, 
+.xdr-wrapper h3, 
+.xdr-wrapper h4 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* SECTION UTILITIES */
+.xdr-section {
+  padding: 6rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.xdr-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.xdr-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4.5rem auto;
+}
+
+.xdr-section-title {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--xdr-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.xdr-section-title span {
+  background: linear-gradient(135deg, #FFF 30%, var(--xdr-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.xdr-section-subtitle {
+  font-size: 1.1rem;
+  color: var(--xdr-muted-light);
+  line-height: 1.6;
+}
+
+/* CTA BUTTONS */
+.btn-xdr-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ff6a00; /* Matching netcradus main brand orange */
+  color: #FFFFFF !important;
+  font-weight: 700;
+  padding: 0.9rem 2.25rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.35);
+  text-decoration: none;
+}
+
+.btn-xdr-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(255, 106, 0, 0.5);
+  background-color: #ff7b1a;
+}
+
+.btn-xdr-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  padding: 0.9rem 2.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--xdr-border-light);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-xdr-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECTION 1: HERO
+   ========================================================================== */
+.xdr-hero,
+.netxdr-hero {
+  padding: 11rem 0 6rem 0;
+  position: relative;
+  z-index: 10;
+  background: url('/img/netxdr bg1.png') no-repeat center center !important;
+  background-size: cover !important;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+.xdr-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 5, 12, 0.6) 0%, rgba(3, 5, 12, 0.8) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.xdr-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .xdr-hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.xdr-hero-kicker {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.xdr-hero-kicker span {
+  background: linear-gradient(135deg, var(--xdr-accent) 0%, var(--xdr-accent-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.xdr-hero-desc {
+  font-size: 1.25rem;
+  color: var(--xdr-text-light);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.hero-indicators-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: flex-end;
+}
+
+.hero-indicator-badge {
+  background: rgba(9, 14, 29, 0.75);
+  border: 1px solid var(--xdr-border-light);
+  backdrop-filter: blur(12px);
+  padding: 0.45rem 1rem;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 156px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.hero-indicator-badge:hover {
+  border-color: var(--xdr-accent);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.25);
+  transform: translateX(-4px);
+}
+
+.hero-indicator-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--xdr-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--xdr-accent);
+}
+
+.hero-indicator-badge:hover .hero-indicator-icon {
+  background-color: var(--xdr-accent);
+  color: #FFFFFF;
+}
+
+.hero-indicator-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--xdr-text-light);
+}
+
+/* HERO BOTTOM CARDS (AI POWERED, DETECT, etc.) */
+.xdr-hero-bottom {
+  padding: 2rem 0 6rem 0;
+  background-color: var(--xdr-bg);
+  position: relative;
+  z-index: 20;
+}
+
+.hero-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.hero-bottom-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--xdr-border-light);
+  border-radius: 20px;
+  padding: 1.75rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.hero-bottom-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--xdr-accent);
+}
+
+.bottom-card-icon {
+  color: var(--xdr-accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero-bottom-card h4 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.hero-bottom-card p {
+  font-size: 0.75rem;
+  color: var(--xdr-muted-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: TRUSTED BY STRIP
+   ========================================================================== */
+.xdr-trusted-strip {
+  padding: 3rem 0;
+  background: #fafafa;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.trusted-strip-header {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+}
+
+.trusted-strip-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.trusted-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   SECTION 3: WHY NET XDR?
+   ========================================================================== */
+.why-xdr-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .why-xdr-grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.why-xdr-title {
+  font-size: clamp(2.2rem, 3.5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.why-xdr-title span {
+  background: linear-gradient(135deg, var(--xdr-accent) 0%, var(--xdr-accent-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.why-xdr-desc {
+  font-size: 1.05rem;
+  color: var(--xdr-muted-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.why-xdr-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--xdr-text-light);
+}
+
+.checklist-icon {
+  color: var(--xdr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPHERE DNA VISUAL */
+.why-xdr-sphere-pod {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sphere-podium {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 80px rgba(59, 130, 246, 0.05);
+}
+
+.sphere-podium::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 1px dashed rgba(139, 92, 246, 0.12);
+  animation: rotate-dashed 20s linear infinite;
+}
+
+@keyframes rotate-dashed {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sphere-core-dna {
+  width: 140px;
+  height: 140px;
+  color: var(--xdr-accent);
+  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.5));
+  animation: pulse-dna 3s ease-in-out infinite;
+}
+
+@keyframes pulse-dna {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+.sphere-node-indicator {
+  position: absolute;
+  background: rgba(9, 14, 29, 0.85);
+  border: 1px solid var(--xdr-border-light);
+  border-radius: 99px;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.node-pos-1 { top: -20px; left: 10px; }
+.node-pos-2 { top: 40%; left: -60px; }
+.node-pos-3 { bottom: -20px; left: 10px; }
+.node-pos-4 { top: -20px; right: 10px; }
+.node-pos-5 { top: 40%; right: -60px; }
+.node-pos-6 { bottom: -20px; right: 10px; }
+
+/* ==========================================================================
+   SECTION 4: POWERFUL CAPABILITIES (WHITE CARDS GRID)
+   ========================================================================== */
+.xdr-capabilities {
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.xdr-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.capability-card {
+  background: var(--xdr-light-panel);
+  border-radius: 20px;
+  padding: 2.25rem;
+  color: var(--xdr-text-dark);
+  box-shadow: 0 4px 20px rgba(17, 24, 39, 0.02), 0 20px 40px rgba(17, 24, 39, 0.05);
+  border: 1px solid var(--xdr-border-dark);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.04), 0 30px 60px rgba(59, 130, 246, 0.1);
+}
+
+.capability-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  color: var(--xdr-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.capability-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  color: var(--xdr-text-dark);
+}
+
+.capability-card p {
+  font-size: 0.875rem;
+  color: var(--xdr-muted-dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 5: COMPLETE VISIBILITY (THREAT OVERVIEW DASHBOARD)
+   ========================================================================== */
+.visibility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .visibility-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+.xdr-threat-dashboard {
+  background: #060913;
+  border: 1px solid var(--xdr-border-light);
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1.25rem;
+}
+
+.dash-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 0.75rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-icon {
+  color: var(--xdr-muted-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sidebar-icon.active {
+  color: var(--xdr-accent);
+}
+
+.dash-main-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dash-stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .dash-stats-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dash-stat-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.dash-stat-panel h5 {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--xdr-muted-light);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.dash-stat-val {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.dash-stat-sparkline {
+  height: 18px;
+  width: 100%;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.dash-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .dash-bottom-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.dash-widget-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.dash-widget-box h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.recent-incidents-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.incident-feed-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.725rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.incident-feed-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION 6: SEAMLESS INTEGRATIONS
+   ========================================================================== */
+.xdr-integrations {
+  border-top: 1px solid var(--xdr-border-light);
+  background-color: rgba(9, 14, 29, 0.2);
+}
+
+.xdr-integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.25rem;
+}
+
+.xdr-integration-badge {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--xdr-border-light);
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.xdr-integration-badge:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--xdr-accent);
+}
+
+.xdr-integration-badge span {
+  font-size: 0.725rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   STAY AHEAD FINAL CTA
+   ========================================================================== */
+.xdr-final-cta {
+  padding: 8rem 0;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 60%), var(--xdr-bg);
+  border-top: 1px solid var(--xdr-border-light);
+}
+
+.xdr-cta-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(9, 14, 29, 0.65);
+  border: 1px solid var(--xdr-border-light);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 4.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.xdr-cta-card h2 {
+  font-size: clamp(2.2rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.xdr-cta-card p {
+  font-size: 1.1rem;
+  color: var(--xdr-muted-light);
+  max-width: 580px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}

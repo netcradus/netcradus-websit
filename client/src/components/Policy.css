@@ -1,0 +1,162 @@
+.policy-page {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  padding: 80px 20px;
+}
+
+/* HERO */
+.policy-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.policy-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.policy-hero p {
+  color: var(--color-text-secondary);
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* CONTENT WRAPPER */
+.policy-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* SECTION BLOCK */
+.policy-section {
+  padding: 32px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-premium);
+  transition: all 0.3s ease;
+}
+
+.policy-section:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium-hover);
+}
+
+/* HEADER ROW */
+.policy-header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+/* NUMBER BADGE */
+.policy-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent);
+
+  background: var(--color-border-accent);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* TITLE */
+.policy-section h2 {
+  font-size: 20px;
+  color: var(--color-text-primary);
+}
+
+/* TEXT */
+.policy-section p {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* DIVIDER (OPTIONAL PREMIUM LINE) */
+.policy-section:not(:last-child)::after {
+  content: "";
+  display: block;
+  margin-top: 20px;
+  height: 1px;
+  background: var(--color-border);
+  opacity: 0.4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .policy-page {
+    padding: 60px 15px;
+  }
+
+  .policy-hero h1 {
+    font-size: 30px;
+  }
+
+  .policy-section {
+    padding: 20px;
+  }
+}
+
+.policy-section ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.policy-section li {
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* container instead of ul */
+.policy-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* bullets */
+.policy-list li {
+  list-style: disc;
+  display: list-item;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.policy-list li::marker {
+  color: var(--color-accent);
+}
+
+/* headings like "Users must:" */
+.policy-subheading {
+  margin-top: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* 🔥 links (email + website) */
+.policy-list a {
+  color: #1a73e8; /* blue */
+  text-decoration: underline;
+}
+
+.policy-list a:hover {
+  color: var(--color-accent);
+}
+
+.policy-link {
+  color: #1a73e8; /* blue */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.policy-link:hover {
+  color: var(--color-accent);
+}

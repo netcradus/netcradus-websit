@@ -1,0 +1,26 @@
+.certification-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.certification-slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

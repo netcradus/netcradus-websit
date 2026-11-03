@@ -1,0 +1,29 @@
+# Environment Variables
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+server/.env
+server/.env.*
+!server/.env.example
+
+# Local Data Directories
+.data/
+data/
+
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Logs
+logs/
+*.log
+
+# Secrets
+server/.secrets/
+.secrets/
+*.pem
+*.key
+

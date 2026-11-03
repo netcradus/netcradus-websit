@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Cyber Resilience Section — Full-Page Showcase Video
+   Netcradus Enterprise Design System
+   ========================================================================== */
+
+.cyber-resilience-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100dvh;
+  max-width: 100vw;
+  background-color: #000000;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-fullscreen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Sound Toggle Control Pill */
+.sound-toggle-btn {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sound-toggle-btn:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.sound-toggle-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .cyber-resilience-video-section {
+    height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .sound-toggle-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+  }
+}

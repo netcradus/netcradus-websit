@@ -1,0 +1,11 @@
+/* Redundant - Styles moved to SubHero.jsx and index.css
+.subhero-typing-cursor {
+  animation: subheroBlink 1s step-end infinite;
+  font-weight: 700;
+}
+
+@keyframes subheroBlink {
+  50% {
+    opacity: 0;
+  }
+} */

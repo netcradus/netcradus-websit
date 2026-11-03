@@ -1,0 +1,300 @@
+/* Hero Section Base Container */
+.hero-stage {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  overflow: hidden;
+  background: radial-gradient(ellipse 120% 90% at 20% 30%, #0d0f17 0%, #05060a 55%), #05060a;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  /* Space for Top Announcement + Navbar */
+  padding-bottom: 1rem;
+}
+
+/* Moving Ambient Radial Glow */
+.hero-glow {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255, 107, 0, 0.22), transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(255, 133, 51, 0.18), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(255, 107, 0, 0.15), transparent 55%);
+  filter: blur(40px);
+  animation: heroGlowDrift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes heroGlowDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2%, -3%, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-3%, 2%, 0) scale(1.03);
+  }
+}
+
+/* SVG Streaks & Travel Keyframes */
+svg.hero-streaks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-streak {
+  stroke-width: 1.4;
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px currentColor);
+  animation-name: streakTravel;
+  animation-timing-function: cubic-bezier(.2, .6, .2, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes streakTravel {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1400;
+  }
+
+  8% {
+    opacity: 0.9;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Pulsing Nodes */
+.hero-node {
+  fill: #ffffff;
+  opacity: 0;
+  animation-name: heroNodePulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes heroNodePulse {
+  0% {
+    opacity: 0;
+    r: 1.5;
+  }
+
+  15% {
+    opacity: 1;
+    r: 2.6;
+  }
+
+  30% {
+    opacity: 0.3;
+    r: 1.8;
+  }
+
+  100% {
+    opacity: 0;
+    r: 1.5;
+  }
+}
+
+/* Vignette Overlay */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Left-Aligned Hero Content Block */
+.hero-content-left {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .hero-content-left {
+    padding: 3.5rem 3rem 1.75rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content-left {
+    padding: 4.5rem 5rem 2rem 5rem;
+  }
+}
+
+/* Eyebrow Label */
+.hero-eyebrow {
+  color: #ff6b00;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* Main Heading */
+.hero-title-main {
+  margin: 0 0 1.5rem 0;
+  font-size: clamp(38px, 5.5vw, 76px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  max-width: 900px;
+  opacity: 0;
+  animation: heroFadeUp 1s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(90deg, #ffffff, #ff8533);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Subheading Paragraph */
+.hero-subheading {
+  margin: 0 0 2.25rem 0;
+  max-width: 660px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.76);
+  opacity: 0;
+  animation: heroFadeUp 1s ease forwards;
+  animation-delay: 0.65s;
+}
+
+/* CTA Action Buttons Container */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  opacity: 0;
+  animation: heroFadeUp 1s ease forwards;
+  animation-delay: 0.85s;
+}
+
+/* Primary CTA Button */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 34px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #ff8533 0%, #ff6b00 100%);
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 6px 25px rgba(255, 107, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(255, 107, 0, 0.6);
+  opacity: 0.95;
+}
+
+.hero-btn-primary:focus-visible {
+  outline: 3px solid #ff6b00;
+  outline-offset: 3px;
+}
+
+/* Secondary Ghost/Outline CTA Button */
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 32px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+.hero-btn-secondary:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Staggered Fade Up Keyframe Animation */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-glow,
+  .hero-streak,
+  .hero-node {
+    animation: none !important;
+  }
+
+  .hero-eyebrow,
+  .hero-title-main,
+  .hero-subheading,
+  .hero-actions {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-streak {
+    opacity: 0.4 !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

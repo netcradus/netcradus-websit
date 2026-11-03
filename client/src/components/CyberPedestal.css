@@ -1,0 +1,269 @@
+.cyber-pedestal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  pointer-events: none;
+}
+
+.cyber-scene-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* Rotate slightly down to see the top, and a little bit to the side */
+  transform: rotateX(60deg) rotateZ(35deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1. BOTTOM PEDESTAL (Squircle Volume) */
+.pedestal-base {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  transform-style: preserve-3d;
+  /* Lift it slightly from floor */
+  transform: translateZ(0px);
+}
+
+.pedestal-top {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #1a2228 0%, #0d1215 80%);
+  border-radius: 60px; /* Squircle */
+  transform: translateZ(40px);
+  /* Top edge highlight */
+  box-shadow: 
+    inset 0 2px 5px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pedestal-top::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: rgba(0, 255, 255, 0.1);
+  filter: blur(40px);
+  border-radius: 50%;
+}
+
+.pedestal-bottom {
+  position: absolute;
+  inset: 0;
+  background: #020405;
+  border-radius: 60px;
+  transform: translateZ(0px);
+  /* Floor shadow */
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+}
+
+/* Left/Right/Front/Back sides using repeated elements to create the 40px thickness */
+.pedestal-faces {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  border-radius: 60px;
+}
+
+.pedestal-face-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  border: 8px solid #0b0f12;
+  box-sizing: border-box;
+}
+
+/* 2. THE GLOWING SLIT (Cyan Light on the dark base) */
+.pedestal-cyan-slit {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 140px;
+  height: 140px;
+  border-right: 4px solid #00ffff;
+  border-bottom: 4px solid #00ffff;
+  border-radius: 0 0 60px 0;
+  transform: translateZ(20px);
+  box-shadow: 
+    10px 10px 30px #00ffff,
+    inset -10px -10px 30px #00ffff;
+  filter: drop-shadow(0 0 10px #00ffff);
+  opacity: 0.9;
+}
+
+/* 3. THE THICK RING (TORUS) */
+.power-ring-container {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translateZ(90px); /* Floating above pedestal */
+}
+
+/* Black Rubber section of the ring */
+.power-ring-black {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 30px solid #111417;
+  /* Add 3D shading to make it look like a tube */
+  box-shadow: 
+    inset 0 8px 10px rgba(255, 255, 255, 0.1),
+    inset 0 -8px 15px rgba(0, 0, 0, 0.8),
+    0 15px 30px rgba(0, 0, 0, 0.8);
+  /* Cut off the front part so the glass ring can show */
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+}
+
+/* Glass Tube section of the ring (Front) */
+.power-ring-glass {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 30px solid rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    inset 0 4px 10px rgba(255, 255, 255, 0.3),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(100% 30%, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Glowing liquid inside the glass tube */
+.glass-liquid-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 15px solid #00ffff;
+  filter: blur(10px);
+  clip-path: polygon(100% 50%, 100% 100%, 30% 100%);
+  animation: liquidPulse 4s alternate infinite ease-in-out;
+}
+
+@keyframes liquidPulse {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  100% { transform: scale(1.02) rotate(10deg); opacity: 1; }
+}
+
+/* 4. THE FLOATING CYBER SHIELD */
+.cyber-shield-wrapper {
+  position: absolute;
+  transform-style: preserve-3d;
+  /* Hover animation is done via framer-motion in JSX on translateZ */
+}
+
+/* Making the shield thick (3D) */
+.shield-model {
+  position: relative;
+  width: 140px;
+  height: 160px;
+  transform-style: preserve-3d;
+}
+
+/* Front Face of Shield */
+.shield-face {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1d252a 0%, #0c1012 100%);
+  clip-path: polygon(50% 0%, 100% 15%, 100% 60%, 50% 100%, 0% 60%, 0% 15%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(15px);
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.2);
+  border: 2px solid #2a353c;
+}
+
+/* Background/Thickness of Shield */
+.shield-back {
+  position: absolute;
+  inset: 0;
+  background: #050708;
+  clip-path: polygon(50% 0%, 100% 15%, 100% 60%, 50% 100%, 0% 60%, 0% 15%);
+  transform: translateZ(0px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+/* Glowing NC logo inside the Shield */
+.shield-logo {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 0 15px #00ffff) drop-shadow(0 0 30px #00ffff);
+  color: #00ffff;
+}
+
+/* Center shield reflection / highlight */
+.shield-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+}
+
+/* 5. BACKGROUND ORBITAL RINGS */
+.orbital-rings {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 255, 255, 0.15);
+  transform: translateZ(-50px);
+  animation: slowSpin 60s linear infinite;
+  pointer-events: none;
+}
+
+.orbital-rings::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 10px;
+  height: 10px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.orbital-rings::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  width: 6px;
+  height: 6px;
+  background: #ff5520;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ff5520;
+}
+
+@keyframes slowSpin {
+  0% { transform: translateZ(-50px) rotateZ(0deg); }
+  100% { transform: translateZ(-50px) rotateZ(360deg); }
+}
+
+/* Revert flat-rotation on content (to keep cards facing front!) */
+.content-unrotate {
+  position: absolute;
+  transform: rotateZ(-35deg) rotateX(-60deg);
+  transform-style: preserve-3d;
+}

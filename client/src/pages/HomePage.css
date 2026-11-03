@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Home Page Theme: Clean, Professional Black, White, and Orange Scheme
+   Scoped strictly to .homepage-theme to avoid touching any other pages.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. TT Hoves Homepage Typography System
+   -------------------------------------------------------------------------- */
+.homepage-theme {
+  font-family: var(--font-primary) !important;
+}
+
+.homepage-theme h1,
+.homepage-theme h2 {
+  font-family: var(--font-primary) !important;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.homepage-theme h3,
+.homepage-theme h4,
+.homepage-theme .card-title {
+  font-family: var(--font-primary) !important;
+  font-weight: 600;
+}
+
+.homepage-theme p {
+  font-family: var(--font-primary) !important;
+  font-weight: 400;
+}
+
+.homepage-theme button,
+.homepage-theme .btn-primary,
+.homepage-theme [class*="btn"] {
+  font-family: var(--font-primary);
+}
+
+/* --------------------------------------------------------------------------
+   1. Services Section (White Content Section)
+   -------------------------------------------------------------------------- */
+.homepage-theme #services {
+  background: #000000 !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.homepage-theme #services h2 {
+  color: #000000 !important;
+}
+
+.homepage-theme #services h2 .text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #services h3 {
+  color: #000000 !important;
+}
+
+.homepage-theme #services p {
+  color: #4b5563 !important;
+}
+
+.homepage-theme #services .service-content-pillar li strong {
+  color: #000000 !important;
+}
+
+.homepage-theme #services .service-content-pillar li span.text-text-secondary {
+  color: #4b5563 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Trust Signals Section (Off-White Content Section)
+   -------------------------------------------------------------------------- */
+.homepage-theme #trust-signals {
+  background: #f8f9fa !important;
+  border-top: 1px solid #e5e7eb !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.homepage-theme #trust-signals span.text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #trust-signals h2 {
+  color: #000000 !important;
+}
+
+.homepage-theme #trust-signals h2 .text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #trust-signals .trust-outer-card {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04), 0 0 20px rgba(255, 107, 0, 0.04) !important;
+}
+
+.homepage-theme #trust-signals .trust-outer-card:hover {
+  border-color: rgba(255, 107, 0, 0.45) !important;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08), 0 0 35px rgba(255, 107, 0, 0.12) !important;
+}
+
+.homepage-theme #trust-signals .trust-outer-card h3 {
+  color: #000000 !important;
+}
+
+.homepage-theme #trust-signals .trust-inner-card {
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+.homepage-theme #trust-signals .trust-inner-card:hover {
+  border-color: rgba(255, 107, 0, 0.35) !important;
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.08) !important;
+}
+
+.homepage-theme #trust-signals .trust-inner-card p {
+  color: #374151 !important;
+}
+
+.homepage-theme #trust-signals .trust-inner-card h4 {
+  color: #000000 !important;
+}
+
+.homepage-theme #trust-signals .trust-inner-card p.text-xs,
+.homepage-theme #trust-signals .trust-inner-card p.text-sm {
+  color: #4b5563 !important;
+}
+
+.homepage-theme #trust-signals .trust-nav-btn {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+}
+
+.homepage-theme #trust-signals .trust-nav-btn:hover {
+  border-color: #ff6b00 !important;
+  color: #ff6b00 !important;
+  box-shadow: 0 0 14px rgba(255, 107, 0, 0.3) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. How It Works Section (White Content Section)
+   -------------------------------------------------------------------------- */
+.homepage-theme #how-it-works {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.homepage-theme #how-it-works span.text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #how-it-works h2 {
+  color: #000000 !important;
+}
+
+.homepage-theme #how-it-works h2 .text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #how-it-works p.text-text-secondary {
+  color: #4b5563 !important;
+}
+
+.homepage-theme #how-it-works .premium-card {
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+}
+
+.homepage-theme #how-it-works .premium-card:hover {
+  border-color: rgba(255, 107, 0, 0.35) !important;
+  box-shadow: 0 12px 35px rgba(255, 107, 0, 0.08) !important;
+}
+
+.homepage-theme #how-it-works .premium-card .text-5xl {
+  color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.homepage-theme #how-it-works .premium-card:hover .text-5xl {
+  color: rgba(255, 107, 0, 0.25) !important;
+}
+
+.homepage-theme #how-it-works .premium-card .w-12.h-12 {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #ff6b00 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
+.homepage-theme #how-it-works .premium-card:hover .w-12.h-12 {
+  background: #ff6b00 !important;
+  color: #ffffff !important;
+  border-color: #ff6b00 !important;
+}
+
+.homepage-theme #how-it-works .premium-card span.text-accent {
+  color: #ff6b00 !important;
+}
+
+.homepage-theme #how-it-works .premium-card h3 {
+  color: #000000 !important;
+}
+
+.homepage-theme #how-it-works .premium-card p.text-text-secondary {
+  color: #4b5563 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Clients / Trusted Leaders Section
+   -------------------------------------------------------------------------- */
+.homepage-theme .trusted-leaders-section,
+.homepage-theme .client-marquee-section {
+  background-image: url("/assets/trusted leaders bg.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #07080c !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.homepage-theme .trusted-leaders-section h2 {
+  color: #ffffff !important;
+}
+
+.homepage-theme .trusted-logo-card {
+  background-color: rgba(12, 14, 20, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.homepage-theme .trusted-logo-card:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}

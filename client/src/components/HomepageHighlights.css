@@ -1,0 +1,71 @@
+/* Homepage Highlights Section */
+.homepage-highlights-section {
+  width: 100%;
+  background: #05060a;
+  padding: 4.5rem 0 4.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Card Outer Container */
+.highlight-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px) scale(1.005);
+  border-color: rgba(255, 123, 41, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 107, 0, 0.2);
+}
+
+.highlight-card:focus-visible {
+  outline: 3px solid #ff7b29;
+  outline-offset: 4px;
+}
+
+/* Animated Corner Accent Stroke */
+.animated-corner-stroke {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawCornerStroke 6s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  filter: drop-shadow(0 0 6px currentColor);
+  opacity: 0.85;
+}
+
+.highlight-card:hover .animated-corner-stroke {
+  filter: drop-shadow(0 0 14px currentColor);
+  opacity: 1;
+}
+
+@keyframes drawCornerStroke {
+  0% {
+    stroke-dashoffset: 400;
+    opacity: 0.25;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -400;
+    opacity: 0.25;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .highlight-card {
+    transition: none !important;
+  }
+
+  .highlight-card:hover {
+    transform: none !important;
+  }
+
+  .animated-corner-stroke {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 0.7 !important;
+  }
+}

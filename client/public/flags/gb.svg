@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="20" height="20">
+  <clipPath id="gb_clip">
+    <rect width="60" height="60" rx="9" ry="9"/>
+  </clipPath>
+  <clipPath id="gb_t">
+    <path d="M30,30 L60,0 h-60 z M30,30 L0,60 h60 z"/>
+  </clipPath>
+  <g clip-path="url(#gb_clip)">
+    <rect width="60" height="60" fill="#012169"/>
+    <path d="M0,0 L60,60 M60,0 L0,60" stroke="#FFFFFF" stroke-width="12"/>
+    <path d="M0,0 L60,60 M60,0 L0,60" stroke="#C8102E" stroke-width="4" clip-path="url(#gb_t)"/>
+    <path d="M30,0 v60 M0,30 h60" stroke="#FFFFFF" stroke-width="20"/>
+    <path d="M30,0 v60 M0,30 h60" stroke="#C8102E" stroke-width="12"/>
+  </g>
+</svg>

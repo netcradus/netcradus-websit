@@ -1,0 +1,220 @@
+:root {
+  --border-color: var(--color-border);
+  --surface-color: var(--color-surface);
+}
+
+.acis-orbit-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* 🔥 prevents oversize */
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px; /* reduced */
+}
+
+.orbit-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.orbit-ambient-glow {
+  position: absolute;
+  width: 115%;
+  height: 115%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 138, 31, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(255, 45, 143, 0.07) 0%, transparent 58%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.orbit-core {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-pulse {
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 45, 143, 0.22) 0%,
+    rgba(255, 138, 31, 0.12) 35%,
+    transparent 75%
+  );
+  filter: blur(30px);
+}
+
+.core-sphere {
+  position: relative;
+  width: 7.8rem;
+  height: 7.8rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 35%),
+    linear-gradient(180deg, rgba(107, 32, 89, 0.9), rgba(47, 13, 45, 0.95));
+  border: 1px solid rgba(189, 118, 255, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 0 40px rgba(180, 70, 255, 0.12),
+    0 0 90px rgba(255, 45, 143, 0.12);
+}
+
+.core-shield {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd7ef;
+  background: linear-gradient(135deg, rgba(255, 138, 31, 0.2), rgba(255, 45, 143, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 18px rgba(255, 45, 143, 0.18);
+}
+
+.core-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: rgba(211, 155, 255, 0.85);
+  text-transform: uppercase;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-inner {
+  border: 1px solid rgba(255, 106, 34, 0.18);
+}
+
+.ring-middle {
+  border: 1px solid rgba(255, 36, 120, 0.14);
+}
+
+.ring-outer {
+  border: 1px solid rgba(142, 74, 255, 0.14);
+}
+
+/* MOVING DOTS */
+.orbit-dot {
+  position: absolute;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tone-orange.orbit-dot {
+  background: #ff7a1a;
+  box-shadow: 0 0 14px rgba(255, 122, 26, 0.9);
+}
+
+.tone-pink.orbit-dot {
+  background: #ff2d8f;
+  box-shadow: 0 0 14px rgba(255, 45, 143, 0.9);
+}
+
+.tone-violet.orbit-dot {
+  background: #8b5cf6;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.9);
+}
+
+/* STATIC BADGES */
+.static-badge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0.52rem 0.9rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.62rem;
+  line-height: 1;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 40;
+}
+
+.static-badge span {
+  font-size: 0.64rem;
+}
+
+.tone-orange.static-badge {
+  color: rgba(255, 138, 31, 0.95);
+  border-color: rgba(255, 138, 31, 0.18);
+}
+
+.tone-pink.static-badge {
+  color: rgba(255, 45, 143, 0.95);
+  border-color: rgba(255, 45, 143, 0.18);
+}
+
+.tone-violet.static-badge {
+  color: rgba(162, 116, 255, 0.95);
+  border-color: rgba(138, 92, 246, 0.2);
+}
+
+@media (max-width: 900px) {
+  .acis-orbit-container {
+    min-height: 460px;
+  }
+
+  .ring-inner {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .ring-middle {
+    width: 290px !important;
+    height: 290px !important;
+  }
+
+  .ring-outer {
+    width: 390px !important;
+    height: 390px !important;
+  }
+
+  .core-sphere {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+
+  .static-badge {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .acis-orbit-container {
+    min-height: 360px;
+    transform: scale(0.82);
+    transform-origin: center;
+  }
+}
